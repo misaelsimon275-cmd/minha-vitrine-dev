@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Misael | Portfólio Pessoal</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">Misael<span>.dev</span></div>
+        
+        <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-label="Abrir menu de navegação">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+
+        <nav class="nav" id="nav-menu">
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#sobre">Sobre mim</a></li>
+                <li><a href="#habilidades">Habilidades</a></li>
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+
+        <button id="theme-toggle" class="theme-toggle" aria-label="Alternar tema claro e escuro">🌙</button>
+    </header>
+
+    <main>
+        <section id="inicio" class="hero">
+            <div class="hero-container">
+                <div class="hero-image-wrapper">
+                    <img src="img/dad47163-406d-4f03-bc90-e9aceb4bd18f.jpg" alt="Foto de Misael" class="hero-img">
+                </div>
+                <div class="hero-content">
+                    <h1 id="saudacao">Olá, eu sou o Misael</h1>
+                    <p class="subtitulo">Estudante de Técnico em Desenvolvimento de Sistemas</p>
+                    <p class="hero-descricao">Construindo o futuro da web com código limpo, responsivo e focado na experiência do usuário.</p>
+                    <div class="hero-buttons">
+                        <a href="#projetos" class="btn btn-primary">Ver Projetos</a>
+                        <a href="https://github.com/misaelsimon275-cmd" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="sobre" class="sobre">
+            <h2>Sobre mim</h2>
+            <div class="sobre-card">
+                <p>Sou estudante do curso Técnico em Desenvolvimento de Sistemas no SENAC MedTec, apaixonado por tecnologia e por transformar problemas complexos em soluções digitais elegantes. Minha jornada na programação começou com o desejo de entender como as interfaces ganham vida.</p>
+                <p>Atualmente, meu foco é dominar o ecossistema Front-end (HTML, CSS e JavaScript), aprimorando minhas habilidades em arquitetura limpa, acessibilidade web e design responsivo.</p>
+            </div>
+        </section>
+
+        <section id="habilidades" class="habilidades">
+            <h2>Habilidades</h2>
+            <div class="habilidades-grid">
+                <article class="habilidade-card">
+                    <h3>HTML5 & Semântica</h3>
+                    <p>Estruturação correta de páginas, SEO básico e acessibilidade (WAI-ARIA).</p>
+                    <span class="nivel confortavel">Confortável</span>
+                </article>
+                <article class="habilidade-card">
+                    <h3>CSS3, Flexbox & Grid</h3>
+                    <p>Design responsivo, variáveis CSS, animações e layouts modernos.</p>
+                    <span class="nivel confortavel">Confortável</span>
+                </article>
+                <article class="habilidade-card">
+                    <h3>JavaScript (ES6+)</h3>
+                    <p>Manipulação do DOM, eventos, funções, arrays e consumo de dados.</p>
+                    <span class="nivel praticando">Praticando</span>
+                </article>
+                <article class="habilidade-card">
+                    <h3>Figma & UI Design</h3>
+                    <p>Criação e interpretação de protótipos de alta fidelidade.</p>
+                    <span class="nivel iniciante">Iniciante</span>
+                </article>
+            </div>
+        </section>
+
+        <section id="projetos" class="projetos">
+            <h2>Projetos</h2>
+            
+            <div class="filtros" aria-label="Filtro de projetos por tecnologia">
+                <button class="btn-filtro active" data-filtro="todos">Todos</button>
+                <button class="btn-filtro" data-filtro="HTML/CSS">HTML & CSS</button>
+                <button class="btn-filtro" data-filtro="Figma">Figma</button>
+                <button class="btn-filtro" data-filtro="JavaScript">JavaScript</button>
+            </div>
+
+            <div class="projetos-grid" id="projetos-grid"></div>
+        </section>
+
+        <section id="contato" class="contato">
+            <h2>Contato</h2>
+            <form id="form-contato" novalidate>
+                <p class="form-aviso">Preencha os campos abaixo para entrar em contato profissionalmente.</p>
+                
+                <div class="form-group">
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
+                    <span class="erro-msg" id="erro-nome" aria-live="polite"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" placeholder="seu.email@exemplo.com" required>
+                    <span class="erro-msg" id="erro-email" aria-live="polite"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="mensagem">Mensagem (Mínimo de 20 caracteres)</label>
+                    <textarea id="mensagem" name="mensagem" rows="4" placeholder="Escreva sua mensagem..." required></textarea>
+                    <span class="erro-msg" id="erro-mensagem" aria-live="polite"></span>
+                </div>
+
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="consentimento" name="consentimento" required>
+                    <label for="consentimento" class="label-consentimento">Concordo em ter meus dados utilizados exclusivamente para retorno deste contato, em conformidade com a LGPD.</label>
+                    <span class="erro-msg" id="erro-consentimento" aria-live="polite"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-full">Enviar Mensagem</button>
+                <p id="sucesso-msg" class="sucesso-msg" aria-live="polite"></p>
+            </form>
+
+            <div class="redes-sociais">
+                <a href="https://github.com/misaelsimon275-cmd" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <span>•</span>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; <span id="ano-atual"></span> Misael. Todos os direitos reservados.</p>
+        <button id="btn-topo" class="btn-topo" aria-label="Voltar ao topo da página">↑</button>
+    </footer>
+
+    <script src="js/script.js" defer></script>
+</body>
+</html>
